@@ -3,7 +3,7 @@ from math import sin, cos, pi
 import time
 
 import os
-if os.name == 'nt': # Если это Windows
+if os.name == 'nt':
     os.system('mode con: cols=130 lines=40')
 
 shader_loading = """
@@ -327,7 +327,7 @@ while True:
             print(f"{map_part}   |   {view_part}")
         
         print("=" * 120)
-        print(" Управление: СТРЕЛКИ | ESC - Выход")
+        print(" Controls: ARROW KEYS | ESC - Exit")
     time.sleep(0.03)
 
 clear()
