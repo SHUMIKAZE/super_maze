@@ -153,7 +153,7 @@ class Raycaster:
         self.RAY_COUNT = 90
         self.SCREEN_HEIGHT = 16
         self.MAX_DISTANCE = 10
-        self.FIELD_OF_VIEW = 180
+        self.FIELD_OF_VIEW = 90
         self.grid = SymbolGrid(self.SCREEN_HEIGHT, self.RAY_COUNT, ' ')
     
     def cast_single_ray(self, ray_index, player_x, player_y, player_angle):
