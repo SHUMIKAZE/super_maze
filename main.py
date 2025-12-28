@@ -82,7 +82,8 @@ super_maze = """
 """
 
 def clear():
-    print("\033[H\033[J", end="")
+    os.system('clear')
+    #print("\033[H\033[J", end="")
 
 class SymbolGrid:
     def __init__(self, rows, cols, default_char='.'):
@@ -203,10 +204,6 @@ class Raycaster:
             distance = self.cast_single_ray(ray_index, player_x, player_y, player_angle)
             self.draw_vertical_line(ray_index, distance)
 
-    def display(self):
-        for row in self.grid.grid:
-            print("".join(row))
-
     def get_render_lines(self):
         return ["".join(row) for row in self.grid.grid]
 
@@ -241,7 +238,7 @@ def on_release(key):
     if key == keyboard.Key.esc:
         Player.kill = 1
         return False
-
+'''
 clear()
 time.sleep(1)
 print(shubin_games)
@@ -264,7 +261,7 @@ time.sleep(2)
 clear()
 print(rendering)
 time.sleep(3)
-
+'''
 
 listener = keyboard.Listener(on_press=on_press, on_release=on_release, suppress=True)
 listener.start()
@@ -321,8 +318,9 @@ while True:
         maze_lines = ["".join(char * 2 for char in row) for row in game_maze.grid.grid]
         view_lines = raycaster.get_render_lines()
 
-        for i in range(16):
-            map_part = maze_lines[i]
+        for i in range(raycaster.SCREEN_HEIGHT):
+            if i < 16:
+                map_part = maze_lines[i]
             view_part = view_lines[i]
             print(f"{map_part}   |   {view_part}")
         
