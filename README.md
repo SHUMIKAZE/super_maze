@@ -1,5 +1,4 @@
-#SUPER MAZE
-##by SHUBIN GAMES
+# SUPER MAZE
+## by SHUBIN GAMES
 
 Enjoy
-
